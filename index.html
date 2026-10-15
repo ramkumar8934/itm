@@ -55,7 +55,7 @@
         <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r shadow-sm flex items-start gap-3">
             <i class="fa-solid fa-triangle-exclamation text-amber-600 text-xl mt-0.5"></i>
             <p class="text-sm text-amber-800">
-                <strong>Emergency Portal:</strong> SOS Button dabate hi 5 second ke liye siren bajega, GPS location record hogi aur aap live photo click ya video record karke evidence bhej sakenge.
+                <strong>Emergency Portal:</strong> SOS Button dabate hi 5 second ke liye siren bajega, GPS location record hogi aur aap photo click ya video record karke seedha authorities ko share kar sakenge.
             </p>
         </div>
 
@@ -78,14 +78,14 @@
         <div class="bg-white rounded-2xl p-6 shadow-md border border-slate-200">
             <div class="flex flex-wrap justify-between items-center mb-2">
                 <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2">
-                    <i class="fa-solid id-card-clip text-red-600"></i> Live Camera Evidence (Photo & Video)
+                    <i class="fa-solid fa-camera text-red-600"></i> Live Camera Evidence (Photo & Video)
                 </h3>
                 <!-- Switch Camera Button -->
                 <button onclick="switchCamera()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition">
                     <i class="fa-solid fa-camera-rotate"></i> Switch Camera (Front/Back)
                 </button>
             </div>
-            <p class="text-xs text-slate-500 mb-4">Emergency photo khinchein ya live video record karein, preview dekhein aur share karein.</p>
+            <p class="text-xs text-slate-500 mb-4">Emergency photo khinchein ya live video record karein, preview dekhein aur direct WhatsApp par share karein.</p>
             
             <!-- Live Camera Preview Box -->
             <div class="relative bg-slate-900 rounded-xl overflow-hidden mb-4 shadow-inner flex items-center justify-center aspect-video sm:aspect-[16/9] max-h-72 mx-auto">
@@ -113,18 +113,33 @@
                 <span id="recStatus" class="text-xs text-slate-600 font-medium">Camera standby...</span>
             </div>
 
-            <!-- Captured Photo Result Box -->
+            <!-- Captured Photo Result Box & WhatsApp Share -->
             <div id="photoResultBox" class="mt-4 hidden space-y-3 bg-slate-900 p-4 rounded-xl">
                 <p class="text-xs font-bold text-white">Captured Emergency Photo Preview:</p>
                 <img id="photoPreview" class="w-full rounded-lg max-h-60 object-contain bg-black" alt="Emergency Photo">
                 <div class="flex flex-wrap gap-2 pt-2">
                     <a id="downloadPhotoBtn" download="ITM_Emergency_Photo.png" class="bg-amber-600 hover:bg-amber-700 text-white text-center py-2 px-4 rounded-lg text-xs font-bold flex items-center justify-center gap-2 flex-grow">
-                        <i class="fa-solid fa-download"></i> Download Photo File
+                        <i class="fa-solid fa-download"></i> Download Photo
+                    </a>
+                </div>
+                <p class="text-xs font-bold text-slate-300 pt-2">Share Captured Photo Evidence on WhatsApp:</p>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    <a href="https://wa.me/919794633042?text=EMERGENCY!%20I%20have%20captured%20an%20emergency%20photo%20proof%20from%20ITM%20Campus." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
+                        <i class="fa-brands fa-whatsapp"></i> HOD Mam
+                    </a>
+                    <a href="https://wa.me/919116205853?text=EMERGENCY!%20I%20have%20captured%20an%20emergency%20photo%20proof%20from%20ITM%20Campus." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
+                        <i class="fa-brands fa-whatsapp"></i> Director Sir
+                    </a>
+                    <a href="https://wa.me/919793697330?text=EMERGENCY!%20I%20have%20captured%20an%20emergency%20photo%20proof%20from%20ITM%20Campus." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
+                        <i class="fa-brands fa-whatsapp"></i> Coordinator
+                    </a>
+                    <a href="https://wa.me/918840493774?text=EMERGENCY!%20I%20have%20captured%20an%20emergency%20photo%20proof%20from%20ITM%20Campus." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
+                        <i class="fa-brands fa-whatsapp"></i> Help Desk
                     </a>
                 </div>
             </div>
 
-            <!-- Recorded Video Playback & Share Options -->
+            <!-- Recorded Video Playback & WhatsApp Share Options -->
             <div id="videoResultBox" class="mt-4 hidden space-y-3 bg-slate-900 p-4 rounded-xl">
                 <p class="text-xs font-bold text-white">Recorded Video Preview:</p>
                 <video id="videoPlayback" controls class="w-full rounded-lg max-h-60 bg-black"></video>
@@ -133,18 +148,18 @@
                         <i class="fa-solid fa-download"></i> Download Video File
                     </a>
                 </div>
-                <p class="text-xs font-bold text-slate-300 pt-2">Send Emergency Alert Notice to Authorities on WhatsApp:</p>
+                <p class="text-xs font-bold text-slate-300 pt-2">Share Recorded Video Evidence on WhatsApp:</p>
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                    <a href="https://wa.me/919794633042?text=EMERGENCY!%20I%20have%20recorded%20an%20emergency%20evidence%20from%20ITM%20Campus." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
+                    <a href="https://wa.me/919794633042?text=EMERGENCY!%20I%20have%20recorded%20an%20emergency%20video%20proof%20from%20ITM%20Campus." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
                         <i class="fa-brands fa-whatsapp"></i> HOD Mam
                     </a>
-                    <a href="https://wa.me/919116205853?text=EMERGENCY!%20I%20have%20recorded%20an%20emergency%20evidence%20from%20ITM%20Campus." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
+                    <a href="https://wa.me/919116205853?text=EMERGENCY!%20I%20have%20recorded%20an%20emergency%20video%20proof%20from%20ITM%20Campus." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
                         <i class="fa-brands fa-whatsapp"></i> Director Sir
                     </a>
-                    <a href="https://wa.me/919793697330?text=EMERGENCY!%20I%20have%20recorded%20an%20emergency%20evidence%20from%20ITM%20Campus." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
+                    <a href="https://wa.me/919793697330?text=EMERGENCY!%20I%20have%20recorded%20an%20emergency%20video%20proof%20from%20ITM%20Campus." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
                         <i class="fa-brands fa-whatsapp"></i> Coordinator
                     </a>
-                    <a href="https://wa.me/918840493774?text=EMERGENCY!%20I%20have%20recorded%20an%20emergency%20evidence%20from%20ITM%20Campus." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
+                    <a href="https://wa.me/918840493774?text=EMERGENCY!%20I%20have%20recorded%20an%20emergency%20video%20proof%20from%20ITM%20Campus." target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white text-center py-2 px-2 rounded-lg text-xs font-bold flex items-center justify-center gap-1">
                         <i class="fa-brands fa-whatsapp"></i> Help Desk
                     </a>
                 </div>
